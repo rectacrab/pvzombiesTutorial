@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MusicPlayer
   - LevelSelector
+  - DamageCanvas
   layers:
   - Default
   - TransparentFX

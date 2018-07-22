@@ -1,0 +1,28 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Defender : MonoBehaviour {
+
+    // Use this for initialization
+    void Start () {
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+
+    //something is attacking.
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Something is attacking: " + name);
+    }
+
+    //take damage from something.
+    public void TakeDamage ()
+    {
+
+    }
+}
