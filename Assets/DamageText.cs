@@ -33,6 +33,6 @@ public class DamageText : MonoBehaviour {
     //method to complete.
     public void Completed ()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 }

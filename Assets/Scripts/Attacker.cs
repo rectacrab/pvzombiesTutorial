@@ -8,17 +8,22 @@ public class Attacker : MonoBehaviour {
     private float maxMovementSpeed = 5f;
     private float movementSpeed = 5f;
     private bool isMoving = true;
-    private Animator animControl;
+    private Animator anim;
     private GameObject strikeTarget = null;
     [SerializeField]
     private float Damage = 5f;
     [SerializeField]
     private float HP = 10f;
 
+    private DamageController dmgControl;
+    
+
+
     // Use this for initialization
     void Start () {
-        animControl = this.GetComponent<Animator>();
+        anim = this.GetComponent<Animator>();
         movementSpeed = maxMovementSpeed;
+        dmgControl = GameObject.FindWithTag("DamageCanvas").GetComponent<DamageController>();
     }
 	
 	// Update is called once per frame
@@ -26,6 +31,15 @@ public class Attacker : MonoBehaviour {
         if (isMoving)
         {
             MoveForward();
+        }
+
+        if (anim.GetBool("isAttacking"))
+        {
+            if (strikeTarget == null)
+            {
+                anim.SetBool("isAttacking", false);
+                SetIsMoving(1);
+            }
         }
 	}
 
@@ -50,15 +64,17 @@ public class Attacker : MonoBehaviour {
             if (hp)
             {
                 hp.TakeDamage(Damage);
+                dmgControl.DisplayDamage(Damage, strikeTarget);
                 Debug.Log("Dealing " + Damage + " to: " + strikeTarget.name);
             }
         }
     }
-    
-    //take damage from something.
+
+    //take damage from projectile script
     public void TakeDamage (float incomingDamage)
     {
-
+        anim.SetTrigger("isHit");
+        this.GetComponent<Health>().TakeDamage(incomingDamage);
     }
 
     //temporary speed boosts for this.
@@ -70,7 +86,7 @@ public class Attacker : MonoBehaviour {
     //start attacking an object.
     public void StartAttack (GameObject otherObj)
     {
-        animControl.SetBool("isAttacking", true);
+        anim.SetBool("isAttacking", true);
         strikeTarget = otherObj;
     }
 }
