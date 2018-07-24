@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class def_stone : MonoBehaviour {
+public class def_Stone : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

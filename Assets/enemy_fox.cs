@@ -28,7 +28,7 @@ public class enemy_fox : MonoBehaviour {
         }
         
         //gravestone jump
-        if (collision.gameObject.GetComponent<def_stone>())
+        if (collision.gameObject.GetComponent<def_Stone>())
         {
             anim.SetTrigger("isJumping");
         }
