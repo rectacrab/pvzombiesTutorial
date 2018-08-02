@@ -17,7 +17,7 @@ public class Defender : MonoBehaviour {
     //something is attacking.
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Something is attacking: " + name);
+        //Debug.Log("Something is attacking: " + name);
     }
 
     //take damage from something.
