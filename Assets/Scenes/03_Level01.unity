@@ -428,6 +428,12 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114140845636399912, guid: de9c1ba9c788c714f8e46d254c355762,
+        type: 2}
+      propertyPath: ObjectToBuild
+      value: 
+      objectReference: {fileID: 1608857307710152, guid: 4ee812e102113f449b975f3a53db320d,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de9c1ba9c788c714f8e46d254c355762, type: 2}
   m_IsPrefabParent: 0
@@ -890,6 +896,12 @@ Prefab:
       value: 
       objectReference: {fileID: 21300008, guid: cdc0da292b3ac41989de40edbf0c5883,
         type: 3}
+    - target: {fileID: 114140845636399912, guid: de9c1ba9c788c714f8e46d254c355762,
+        type: 2}
+      propertyPath: ObjectToBuild
+      value: 
+      objectReference: {fileID: 1974388040651252, guid: 821f08bc64f35434280ec5d1b5cb74a3,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de9c1ba9c788c714f8e46d254c355762, type: 2}
   m_IsPrefabParent: 0
@@ -950,7 +962,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.3504744
+  orthographic size: 3.378255
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -973,7 +985,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 736138184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 3.33, z: -10}
+  m_LocalPosition: {x: 5, y: 3.37, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1421,6 +1433,12 @@ Prefab:
       value: 
       objectReference: {fileID: 1204752687302512, guid: 1ce1b36b30a82cb4da58956c99eae2d7,
         type: 2}
+    - target: {fileID: 114140845636399912, guid: de9c1ba9c788c714f8e46d254c355762,
+        type: 2}
+      propertyPath: ObjectToBuild
+      value: 
+      objectReference: {fileID: 1204752687302512, guid: 1ce1b36b30a82cb4da58956c99eae2d7,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de9c1ba9c788c714f8e46d254c355762, type: 2}
   m_IsPrefabParent: 0
@@ -1664,6 +1682,12 @@ Prefab:
     - target: {fileID: 114140845636399912, guid: de9c1ba9c788c714f8e46d254c355762,
         type: 2}
       propertyPath: tagetObject
+      value: 
+      objectReference: {fileID: 1264328553860292, guid: a2d9e243a0bc8e949840295ab36732ae,
+        type: 2}
+    - target: {fileID: 114140845636399912, guid: de9c1ba9c788c714f8e46d254c355762,
+        type: 2}
+      propertyPath: ObjectToBuild
       value: 
       objectReference: {fileID: 1264328553860292, guid: a2d9e243a0bc8e949840295ab36732ae,
         type: 2}

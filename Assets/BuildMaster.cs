@@ -37,4 +37,13 @@ public class BuildMaster : MonoBehaviour {
         }
     }
 
+    //stop building the thing.
+    public void ClearBuildSelection ()
+    {
+        buildingObject = null;
+        for (int p =0; p < buttons.Length; p++)
+        {
+            buttons[p].SetInactiveButton();
+        }
+    }
 }
