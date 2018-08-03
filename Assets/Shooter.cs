@@ -8,11 +8,17 @@ public class Shooter : MonoBehaviour {
     [SerializeField]
     private GameObject projectile;
     private Animator anim;
+    private GameObject projectilesParent;
 
     // Use this for initialization
     void Start () {
         anim = this.GetComponent<Animator>();
         Invoke("FireAnimation", cooldown);
+        projectilesParent = GameObject.Find("Projectiles");
+        if (!projectilesParent)
+        {
+            projectilesParent = new GameObject("Projectiles");
+        }
     }
 	
 	// Update is called once per frame
@@ -25,6 +31,7 @@ public class Shooter : MonoBehaviour {
     {
         GameObject obj = Instantiate(projectile);
         obj.SetActive(true);
+        obj.transform.SetParent(projectilesParent.transform);
         obj.transform.position = this.transform.position;
     }
 
