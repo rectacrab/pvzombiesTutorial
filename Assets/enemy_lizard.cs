@@ -5,6 +5,8 @@ using UnityEngine;
 public class enemy_lizard : MonoBehaviour {
     private Animator anim;
     private Attacker attacker;
+
+
     // Use this for initialization
     void Start () {
         anim = this.GetComponent<Animator>();

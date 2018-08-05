@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Defender : MonoBehaviour {
-
+    private StarInventory starInv;
     // Use this for initialization
     void Start () {
 		
@@ -20,9 +20,14 @@ public class Defender : MonoBehaviour {
         //Debug.Log("Something is attacking: " + name);
     }
 
-    //take damage from something.
-    public void TakeDamage ()
+    //Add stars from harvester.
+    public void SpawnStars (int Amount)
     {
+        if (!starInv)
+        {
+            starInv = GameObject.FindObjectOfType<StarInventory>();
+        }
 
+        starInv.AddStars(Amount);
     }
 }

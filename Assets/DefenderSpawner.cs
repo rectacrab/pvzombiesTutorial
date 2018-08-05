@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class DefenderSpawner : MonoBehaviour {
     private GameObject defenderParent;
+    private StarInventory starInv;
+
 	// Use this for initialization
 	void Start () {
         defenderParent = GameObject.Find("Defenders");
@@ -12,18 +14,21 @@ public class DefenderSpawner : MonoBehaviour {
         {
             defenderParent = new GameObject("Defenders");
         }
-
+        starInv = GameObject.FindObjectOfType<StarInventory>();
 
     }
 
     private void OnMouseDown()
     {
-        Debug.Log("mouse pos: " + SnapToGrid(CalculateWorldPosition()));
         if (BuildMaster.buildingObject != null)
         {
-            GameObject newDef = Instantiate(BuildMaster.buildingObject, SnapToGrid(CalculateWorldPosition()), Quaternion.identity);
-            newDef.transform.SetParent(defenderParent.transform);
-            newDef.SetActive(true);
+            if (starInv.GetStarCount() >= BuildMaster.buildingCost)
+            {
+                GameObject newDef = Instantiate(BuildMaster.buildingObject, SnapToGrid(CalculateWorldPosition()), Quaternion.identity);
+                newDef.transform.SetParent(defenderParent.transform);
+                newDef.SetActive(true);
+                starInv.SpendStars(BuildMaster.buildingCost);
+            }
         }
     }
 
@@ -36,7 +41,9 @@ public class DefenderSpawner : MonoBehaviour {
     private Vector3 SnapToGrid (Vector2 rawValue)
     {
         float xVal = Mathf.RoundToInt(rawValue.x);
-        float yVal = Mathf.RoundToInt(rawValue.y);
+        float yVal = Mathf.FloorToInt(rawValue.y);
+        Debug.Log("Raw Pos X: " + rawValue.x + ", rounded: " + xVal);
+        Debug.Log("Raw Pos Y: " + rawValue.y + ", rounded: " + yVal);
         Vector3 newpos = new Vector3(xVal, yVal, 1);
         return newpos;
     }

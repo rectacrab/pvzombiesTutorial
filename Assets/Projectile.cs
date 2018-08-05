@@ -31,6 +31,7 @@ public class Projectile : MonoBehaviour {
         if (ene)
         {
             ene.TakeDamage(Damage);
+            Destroy(this.gameObject);
         }
     }
 }

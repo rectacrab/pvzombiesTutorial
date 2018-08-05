@@ -5,6 +5,7 @@ using UnityEngine;
 public class BuildMaster : MonoBehaviour {
 
     public static GameObject buildingObject;
+    public static int buildingCost;
     private BuildButton[] buttons = new BuildButton[4];
 
 	// Use this for initialization

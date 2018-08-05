@@ -16,7 +16,7 @@ public class Attacker : MonoBehaviour {
     private float HP = 10f;
 
     private DamageController dmgControl;
-    
+    public float SpawnTime; //delay on spawning object.
 
 
     // Use this for initialization

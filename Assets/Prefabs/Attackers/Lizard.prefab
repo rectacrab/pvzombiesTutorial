@@ -163,6 +163,7 @@ MonoBehaviour:
   maxMovementSpeed: 0.5
   Damage: 5
   HP: 15
+  SpawnTime: 2
 --- !u!114 &114381922750854506
 MonoBehaviour:
   m_ObjectHideFlags: 1

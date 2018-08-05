@@ -13,6 +13,8 @@ public class BuildButton : MonoBehaviour {
     [SerializeField]
     private Color32 inactiveColour;
     [SerializeField]
+    private Color32 tooExpensiveColour;
+    [SerializeField]
     private Color32 activeColour;
     [SerializeField]
     private GameObject ObjectToBuild;
@@ -38,11 +40,17 @@ public class BuildButton : MonoBehaviour {
         TargetImage.color = inactiveColour;
     }
 
+    public void SetTooExpensive ()
+    {
+        TargetImage.color = tooExpensiveColour;
+    }
+
     //need to put checks in here.
     public void SetBuildType ()
     {
         buildMaster.setCurrentActive(transform.GetSiblingIndex());
         BuildMaster.buildingObject = ObjectToBuild;
+        BuildMaster.buildingCost = BuildCost;
         Debug.Log("Setting build to: " + BuildMaster.buildingObject);
     }
 }
